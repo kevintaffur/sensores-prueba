@@ -1,0 +1,614 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "sensores",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/v1/lecturas": {
+      "get": {
+        "tags": [
+          "Lectura"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Lectura"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LecturaCreacionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LecturaCreacionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LecturaCreacionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/lecturas/{lecturaId}": {
+      "get": {
+        "tags": [
+          "Lectura"
+        ],
+        "parameters": [
+          {
+            "name": "lecturaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/lecturas/filtro-fechas/{sensorId}": {
+      "get": {
+        "tags": [
+          "Lectura"
+        ],
+        "parameters": [
+          {
+            "name": "sensorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Year",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Month",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Day",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "DayOfWeek",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DayOfWeek"
+            }
+          },
+          {
+            "name": "DayOfYear",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "DayNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Year",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Month",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Day",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "DayOfWeek",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DayOfWeek"
+            }
+          },
+          {
+            "name": "DayOfYear",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "DayNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/lecturas/filtro-activos/{sensorId}": {
+      "get": {
+        "tags": [
+          "Lectura"
+        ],
+        "parameters": [
+          {
+            "name": "sensorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/lecturas/estadisticas/{sensorId}": {
+      "get": {
+        "tags": [
+          "Lectura"
+        ],
+        "parameters": [
+          {
+            "name": "sensorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/sensores": {
+      "get": {
+        "tags": [
+          "Sensor"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Sensor"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SensorCreacionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SensorCreacionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SensorCreacionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/sensores/{sensorId}": {
+      "get": {
+        "tags": [
+          "Sensor"
+        ],
+        "parameters": [
+          {
+            "name": "sensorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Sensor"
+        ],
+        "parameters": [
+          {
+            "name": "sensorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SensorModificacionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SensorModificacionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SensorModificacionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Sensor"
+        ],
+        "parameters": [
+          {
+            "name": "sensorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ubicaciones": {
+      "get": {
+        "tags": [
+          "Ubicacion"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Ubicacion"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UbicacionCreacionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UbicacionCreacionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UbicacionCreacionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/ubicaciones/{ubicacionId}": {
+      "get": {
+        "tags": [
+          "Ubicacion"
+        ],
+        "parameters": [
+          {
+            "name": "ubicacionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Ubicacion"
+        ],
+        "parameters": [
+          {
+            "name": "ubicacionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UbicacionModificacionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UbicacionModificacionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UbicacionModificacionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Ubicacion"
+        ],
+        "parameters": [
+          {
+            "name": "ubicacionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DayOfWeek": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "LecturaCreacionDto": {
+        "required": [
+          "estado",
+          "sensorId",
+          "valor"
+        ],
+        "type": "object",
+        "properties": {
+          "sensorId": {
+            "pattern": "^[1-9][0-9]*$",
+            "type": "integer",
+            "format": "int32"
+          },
+          "valor": {
+            "pattern": "^[0-9]+(\\.[0-9]{1,2})?$",
+            "type": "number",
+            "format": "double"
+          },
+          "estado": {
+            "minLength": 1,
+            "pattern": "^(A|I)$/i",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SensorCreacionDto": {
+        "required": [
+          "estado",
+          "metrica",
+          "ubicacionId"
+        ],
+        "type": "object",
+        "properties": {
+          "ubicacionId": {
+            "pattern": "^[1-9][0-9]*$",
+            "type": "integer",
+            "format": "int32"
+          },
+          "metrica": {
+            "minLength": 1,
+            "pattern": "^(TEMPERATURA|HUMEDAD|PRESION)$/i",
+            "type": "string"
+          },
+          "estado": {
+            "minLength": 1,
+            "pattern": "^(A|I)$/i",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SensorModificacionDto": {
+        "type": "object",
+        "properties": {
+          "ubicacionId": {
+            "pattern": "^[1-9][0-9]*$",
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "metrica": {
+            "pattern": "^(TEMPERATURA|HUMEDAD|PRESION)$/i",
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "pattern": "^(A|I)$/i",
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UbicacionCreacionDto": {
+        "required": [
+          "estado",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "maxLength": 20,
+            "minLength": 3,
+            "type": "string"
+          },
+          "estado": {
+            "minLength": 1,
+            "pattern": "^(A|I)$/i",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UbicacionModificacionDto": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "maxLength": 20,
+            "minLength": 3,
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "pattern": "^(A|I)$/i",
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

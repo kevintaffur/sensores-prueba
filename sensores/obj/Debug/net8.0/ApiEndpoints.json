@@ -1,0 +1,260 @@
+[
+  {
+    "ContainingType": "sensores.Controllers.LecturaController",
+    "Method": "ObtenerTodos",
+    "RelativePath": "api/v1/lecturas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.LecturaController",
+    "Method": "Crear",
+    "RelativePath": "api/v1/lecturas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "creacion",
+        "Type": "sensores.Dtos.Lecturas.LecturaCreacionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.LecturaController",
+    "Method": "ObtenerPorId",
+    "RelativePath": "api/v1/lecturas/{lecturaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lecturaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.LecturaController",
+    "Method": "Estadisticas",
+    "RelativePath": "api/v1/lecturas/estadisticas/{sensorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sensorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.LecturaController",
+    "Method": "ObtenerActivos",
+    "RelativePath": "api/v1/lecturas/filtro-activos/{sensorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sensorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.LecturaController",
+    "Method": "ObtenerTodos",
+    "RelativePath": "api/v1/lecturas/filtro/{sensorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sensorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "inicio",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "fin",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.SensorController",
+    "Method": "ObtenerTodos",
+    "RelativePath": "api/v1/sensores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.SensorController",
+    "Method": "Crear",
+    "RelativePath": "api/v1/sensores",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "creacion",
+        "Type": "sensores.Dtos.Sensores.SensorCreacionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.SensorController",
+    "Method": "ObtenerPorId",
+    "RelativePath": "api/v1/sensores/{sensorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sensorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.SensorController",
+    "Method": "Modificar",
+    "RelativePath": "api/v1/sensores/{sensorId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sensorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "modificacion",
+        "Type": "sensores.Dtos.Sensores.SensorModificacionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.SensorController",
+    "Method": "Eliminar",
+    "RelativePath": "api/v1/sensores/{sensorId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sensorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.UbicacionController",
+    "Method": "ObtenerTodos",
+    "RelativePath": "api/v1/ubicaciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.UbicacionController",
+    "Method": "Crear",
+    "RelativePath": "api/v1/ubicaciones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "creacion",
+        "Type": "sensores.Dtos.Ubicaciones.UbicacionCreacionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.UbicacionController",
+    "Method": "ObtenerPorId",
+    "RelativePath": "api/v1/ubicaciones/{ubicacionId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ubicacionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.UbicacionController",
+    "Method": "Modificar",
+    "RelativePath": "api/v1/ubicaciones/{ubicacionId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ubicacionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "modificacion",
+        "Type": "sensores.Dtos.Ubicaciones.UbicacionModificacionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sensores.Controllers.UbicacionController",
+    "Method": "Eliminar",
+    "RelativePath": "api/v1/ubicaciones/{ubicacionId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ubicacionId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
