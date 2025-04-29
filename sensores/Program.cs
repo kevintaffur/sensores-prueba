@@ -22,6 +22,18 @@ builder.Services.AddScoped<IUbicacionService, UbicacionService>();
 builder.Services.AddScoped<ILecturaRepository, LecturaRepository>();
 builder.Services.AddScoped<ILecturaService, LecturaService>();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "Custom",
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:7236")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+        });
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -35,6 +47,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("Custom");
 
 app.UseHttpsRedirection();
 
