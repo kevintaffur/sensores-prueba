@@ -1,5 +1,6 @@
 ﻿using sensores.Dtos.Lecturas;
 using sensores.Dtos.Sensores;
+using sensores.Dtos.Ubicaciones;
 using sensores.Exceptions;
 using sensores.Models;
 using sensores.Repositories.LecturaRepository;
@@ -106,7 +107,19 @@ namespace sensores.Services.LecturaService
             {
                 Id = entidad.Id,
                 Estado = entidad.Estado,
-                SensorId = entidad.SensorId,
+                Sensor = new SensorDto
+                {
+                    Id = entidad.Sensor.Id,
+                    Ubicacion = new UbicacionDto
+                    {
+                        Id = entidad.Sensor.Ubicacion.Id,
+                        Nombre = entidad.Sensor.Ubicacion.Nombre,
+                        Estado = entidad.Sensor.Ubicacion.Estado
+                    },
+                    Metrica = entidad.Sensor.Metrica,
+                    Estado = entidad.Sensor.Estado
+                },
+                //SensorId = entidad.SensorId,
                 Valor = entidad.Valor,
                 Fecha = ((DateTime)entidad.Fecha).ToShortDateString() + " a las " + ((DateTime)entidad.Fecha).ToLongTimeString(),
             };

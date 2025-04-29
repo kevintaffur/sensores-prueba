@@ -1,4 +1,5 @@
 ﻿using sensores.Dtos.Sensores;
+using sensores.Dtos.Ubicaciones;
 using sensores.Exceptions;
 using sensores.Models;
 using sensores.Repositories.SensorRepository;
@@ -106,7 +107,13 @@ namespace sensores.Services.SensorService
             return new SensorDto()
             {
                 Id = entidad.Id,
-                UbicacionId = entidad.UbicacionId,
+                Ubicacion = new UbicacionDto
+                {
+                    Id = entidad.Ubicacion.Id,
+                    Nombre = entidad.Ubicacion.Nombre,
+                    Estado = entidad.Ubicacion.Estado,
+                },
+                //UbicacionId = entidad.UbicacionId,
                 Metrica = entidad.Metrica,
                 Estado = entidad.Estado
             };

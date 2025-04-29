@@ -19,15 +19,19 @@ namespace sensores.Repositories.LecturaRepository
             return entidad;
         }
 
-        public async Task<Lectura> ObtenerPorId(int id)
+        public async Task<Lectura?> ObtenerPorId(int id)
         {
             return await _context.Lecturas
+                .Include(s => s.Sensor)
+                .ThenInclude(s => s.Ubicacion)
                 .FirstOrDefaultAsync(s => s.Id == id && !s.Estado.Equals("N"));
         }
 
         public async Task<List<Lectura>> ObtenerTodos()
         {
             return await _context.Lecturas
+                .Include(s => s.Sensor)
+                .ThenInclude(s => s.Ubicacion)
                 .Where(s => !s.Estado.Equals("N"))
                 .ToListAsync();
         }
@@ -35,6 +39,8 @@ namespace sensores.Repositories.LecturaRepository
         public async Task<List<Lectura>> ObtenerPorSensorIdRangoFechas(int id, DateOnly inicio, DateOnly fin)
         {
             return await _context.Lecturas
+                .Include(s => s.Sensor)
+                .ThenInclude(s => s.Ubicacion)
                 .Where(s => s.SensorId == id &&
                     ((inicio == default || fin == default) || DateOnly.FromDateTime((DateTime)s.Fecha) >= inicio && DateOnly.FromDateTime((DateTime)s.Fecha) <= fin) &&
                     !s.Estado.Equals("N"))
@@ -44,6 +50,8 @@ namespace sensores.Repositories.LecturaRepository
         public async Task<List<Lectura>> ObtenerActivasPorSensorId(int id)
         {
             return await _context.Lecturas
+                .Include(s => s.Sensor)
+                .ThenInclude(s => s.Ubicacion)
                 .Where(s => s.Estado.Equals("A") && s.SensorId == id)
                 .ToListAsync();
         }

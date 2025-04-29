@@ -29,12 +29,14 @@ namespace sensores.Repositories.SensorRepository
         public async Task<Sensore> ObtenerPorId(int id)
         {
             return await _context.Sensores
+                .Include(s => s.Ubicacion)
                 .FirstOrDefaultAsync(s => s.Id == id && !s.Estado.Equals("N"));
         }
 
         public async Task<List<Sensore>> ObtenerTodos()
         {
             return await _context.Sensores
+                .Include(s => s.Ubicacion)
                 .Where(s => !s.Estado.Equals("N"))
                 .ToListAsync();
         }
@@ -42,6 +44,7 @@ namespace sensores.Repositories.SensorRepository
         public async Task<bool> ExisteSensorConUbicacion(int id)
         {
             return await _context.Sensores
+                .Include(s => s.Ubicacion)
                 .AnyAsync(s => s.UbicacionId == id && !s.Estado.Equals("N"));
         }
     }

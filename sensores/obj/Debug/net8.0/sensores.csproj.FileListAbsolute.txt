@@ -170,3 +170,4 @@ C:\Users\Kevin\source\repos\pruebaapi\sensores\sensores\obj\Debug\net8.0\refint\
 C:\Users\Kevin\source\repos\pruebaapi\sensores\sensores\obj\Debug\net8.0\sensores.pdb
 C:\Users\Kevin\source\repos\pruebaapi\sensores\sensores\obj\Debug\net8.0\sensores.genruntimeconfig.cache
 C:\Users\Kevin\source\repos\pruebaapi\sensores\sensores\obj\Debug\net8.0\ref\sensores.dll
+C:\Users\Kevin\source\repos\pruebaapi\sensores\sensores\obj\Debug\net8.0\sensores.sourcelink.json
