@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using sensores.Dtos.Sensores;
 using sensores.Exceptions;
 using sensores.Services.SensorService;
@@ -8,6 +9,7 @@ namespace sensores.Controllers
 {
     [ApiController]
     [Route("api/v1/sensores")]
+    [Authorize]
     public class SensorController : ControllerBase
     {
         private readonly ISensorService _service;

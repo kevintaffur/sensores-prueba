@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using sensores.Dtos.Sensores;
 using sensores.Dtos.Ubicaciones;
 using sensores.Exceptions;
@@ -11,6 +12,7 @@ namespace sensores.Controllers
 {
     [ApiController]
     [Route("api/v1/ubicaciones")]
+    [Authorize]
     public class UbicacionController : ControllerBase
     {
         private readonly IUbicacionService _service;

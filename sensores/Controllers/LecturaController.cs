@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using sensores.Dtos.Lecturas;
 using sensores.Dtos.Sensores;
 using sensores.Exceptions;
@@ -10,6 +11,7 @@ namespace sensores.Controllers
 {
     [ApiController]
     [Route("api/v1/lecturas")]
+    [Authorize]
     public class LecturaController : ControllerBase
     {
         private readonly ILecturaService _service;

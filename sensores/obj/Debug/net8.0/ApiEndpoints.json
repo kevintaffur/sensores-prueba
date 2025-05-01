@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "sensores.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/v1/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombre",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "sensores.Controllers.LecturaController",
     "Method": "ObtenerTodos",
     "RelativePath": "api/v1/lecturas",
